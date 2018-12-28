@@ -74,9 +74,12 @@ class GasPage extends Component {
                     <button onClick={this.job2}>Job 2</button>
                     <button onClick={this.valleyFair}>Valley Fair</button>
                     <button onClick={this.jake}>Jake?</button>
-                    <p>That trip will cost ${this.state.tripCost}.</p>
                 </div>
-                <LocationSearchInput></LocationSearchInput>
+                <div>
+                    <p>Or Somewhere else?</p>
+                    <LocationSearchInput></LocationSearchInput>
+                </div>
+                <p>That trip will cost ${this.state.tripCost}.</p>
             </div>
         );
     }
