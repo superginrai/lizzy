@@ -67,9 +67,7 @@ class GasPage extends Component {
         return (
             <div>
                 <div>
-                    <p>
-                        This page is about gas!!
-      </p>
+                    <p>This page is about gas!!</p>
                     Gas costs about ${this.state.gasPrice} per gallon!
                     <p>Where are you going Lizzy?</p>
                     <button onClick={this.job1}>Job 1</button>
