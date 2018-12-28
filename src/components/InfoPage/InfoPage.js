@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import LocationSearchInput from '../LocationSearchInput/LocationSearchInput';
 
 export class MapContainer extends Component {
 
@@ -13,8 +14,10 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <Map google={this.props.google} zoom={14}>
-
+      <div>
+      <Map google={this.props.google} zoom={14}
+      initialCenter={{ lat: 44.805870, lng: -93.608780 }}>
+        
         <Marker onClick={this.onMarkerClick}
                 name={'Current location'} />
 
@@ -24,6 +27,8 @@ export class MapContainer extends Component {
             </div>
         </InfoWindow>
       </Map>
+      <LocationSearchInput></LocationSearchInput>
+      </div>
     );
   }
 }

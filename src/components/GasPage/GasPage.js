@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import LocationSearchInput from '../LocationSearchInput/LocationSearchInput';
 
 class GasPage extends Component {
     constructor(props) {
@@ -77,6 +78,7 @@ class GasPage extends Component {
                     <button onClick={this.jake}>Jake?</button>
                     <p>That trip will cost ${this.state.tripCost}.</p>
                 </div>
+                <LocationSearchInput></LocationSearchInput>
             </div>
         );
     }
