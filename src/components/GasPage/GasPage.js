@@ -29,13 +29,6 @@ class GasPage extends Component {
             });
     };
 
-    valleyFair = () => {
-        let cost = (this.state.gasPrice * .33).toFixed(2);
-        this.setState({
-            tripCost: cost,
-        });
-    }
-
     job1 = () => {
         let cost = (this.state.gasPrice * .33).toFixed(2);
         this.setState({
@@ -45,6 +38,20 @@ class GasPage extends Component {
 
     job2 = () => {
         let cost = (this.state.gasPrice * .067).toFixed(2);
+        this.setState({
+            tripCost: cost,
+        });
+    }
+
+    valleyFair = () => {
+        let cost = (this.state.gasPrice * .33).toFixed(2);
+        this.setState({
+            tripCost: cost,
+        });
+    }
+
+    jake = () => {
+        let cost = (this.state.gasPrice * .77).toFixed(2);
         this.setState({
             tripCost: cost,
         });
@@ -67,6 +74,7 @@ class GasPage extends Component {
                     <button onClick={this.job1}>Job 1</button>
                     <button onClick={this.job2}>Job 2</button>
                     <button onClick={this.valleyFair}>Valley Fair</button>
+                    <button onClick={this.jake}>Jake?</button>
                     <p>That trip will cost ${this.state.tripCost}.</p>
                 </div>
             </div>

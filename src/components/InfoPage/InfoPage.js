@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+export class MapContainer extends Component {
 
-const InfoPage = () => (
-  <div>
-    <p>
-      Hello Lizzy.  Gas is expensive.
-    </p>
-  </div>
-);
+  constructor(props) {
+    super(props)
 
-export default InfoPage;
+    this.state = {
+
+    };
+}
+
+  render() {
+    return (
+      <Map google={this.props.google} zoom={14}>
+
+        <Marker onClick={this.onMarkerClick}
+                name={'Current location'} />
+
+        <InfoWindow onClose={this.onInfoWindowClose}>
+            <div>
+              {/* <h1>{this.state.selectedPlace.name}</h1> */}
+            </div>
+        </InfoWindow>
+      </Map>
+    );
+  }
+}
+
+export default GoogleApiWrapper({
+  apiKey: ('AIzaSyDFYDfN3cmij0aoznnGRGZb35VMEo4vW6w')
+})(MapContainer)
