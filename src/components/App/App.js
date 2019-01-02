@@ -17,6 +17,7 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import GasPage from '../GasPage/GasPage';
+import TripPage from '../TripPage/TripPage';
 
 import './App.css';
 
@@ -60,6 +61,11 @@ class App extends Component {
               exact
               path="/gas"
               component={GasPage}
+            />
+              <ProtectedRoute
+              exact
+              path="/trip"
+              component={TripPage}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
