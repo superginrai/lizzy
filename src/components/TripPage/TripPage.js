@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import LocationSearchInput from '../LocationSearchInput/LocationSearchInput';
 
@@ -8,7 +9,7 @@ class GasPage extends Component {
 
         this.state = {
             gasPrice: [],
-            location: [],
+            location: '',
         };
     }
 
@@ -32,7 +33,7 @@ class GasPage extends Component {
 
     setHome = () => {
         this.setState({
-            location: { lat: 44.805870, lng: -93.608780 },
+            location: 'tacos!!!',
         });
     }
 
@@ -40,7 +41,8 @@ class GasPage extends Component {
         const action = {
             type: 'SET_LOCATION',
             payload: this.state.location,
-          };
+        };
+        this.props.dispatch(action);
         this.props.history.push('/gas');
     }
 
@@ -71,4 +73,4 @@ class GasPage extends Component {
         );
     }
 }
-export default GasPage;
+export default connect()(GasPage);
