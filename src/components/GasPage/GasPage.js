@@ -76,6 +76,7 @@ class GasPage extends Component {
                     <p>This page is about gas!!</p>
                     Gas costs about ${this.state.gasPrice} per gallon! */}
                     <h2>{this.props.reduxState.setLocation.setLocation}</h2>
+                    <h2>{this.props.reduxState.setLocation.setLng}</h2>
                     {/* <p>Where are you going Lizzy?</p>
                     <button onClick={this.job1}>Job 1</button>
                     <button onClick={this.job2}>Job 2</button>

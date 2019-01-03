@@ -42,9 +42,16 @@ class GasPage extends Component {
     setTrip = () => {
         const action = {
             type: 'SET_LOCATION',
-            payload: this.state.lat,
+            payload: { lat: this.state.lat,
+            lng: this.state.lng, }
         };
         this.props.dispatch(action);
+        const action2 = {
+            type: 'SET_LNG',
+            payload: { lat: this.state.lat,
+            lng: this.state.lng, }
+        };
+        this.props.dispatch(action2);
         this.props.history.push('/gas');
     }
 
