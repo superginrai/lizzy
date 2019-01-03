@@ -9,7 +9,8 @@ class GasPage extends Component {
 
         this.state = {
             gasPrice: [],
-            location: '',
+            lat: '',
+            lng: '',
         };
     }
 
@@ -33,14 +34,15 @@ class GasPage extends Component {
 
     setHome = () => {
         this.setState({
-            location: 'tacos!!!',
+            lat: '44.805870',
+            lng: '-93.608780',
         });
     }
 
     setTrip = () => {
         const action = {
             type: 'SET_LOCATION',
-            payload: this.state.location,
+            payload: this.state.lat,
         };
         this.props.dispatch(action);
         this.props.history.push('/gas');

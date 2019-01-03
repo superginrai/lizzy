@@ -9,6 +9,16 @@ const setLocation = (state = [], action) => {
     }
 };
 
+const setLng = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_LNG':
+            return [...state, ...action.payload];
+        default:
+            return state;
+    }
+};
+
 export default combineReducers({
     setLocation,
+    setLng,
 });
