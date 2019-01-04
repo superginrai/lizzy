@@ -12,6 +12,8 @@ class GasPage extends Component {
     //     super(props)
 
         state = {
+            lat: '',
+            lng: '',
             // gasPrice: [],
             // tripCost: [],
         };
@@ -35,12 +37,12 @@ class GasPage extends Component {
     //         });
     // };
 
-    // job1 = () => {
-    //     let cost = (this.state.gasPrice * .33).toFixed(2);
-    //     this.setState({
-    //         tripCost: cost,
-    //     });
-    // }
+    job1 = () => {
+        this.setState({
+            lat: '44.910695',
+            lng: '-93.525040',
+        });
+    }
 
     // job2 = () => {
     //     let cost = (this.state.gasPrice * .067).toFixed(2);
@@ -72,12 +74,11 @@ class GasPage extends Component {
     render() {
         return (
             <div>
-                {/* <div>
-                    <p>This page is about gas!!</p>
-                    Gas costs about ${this.state.gasPrice} per gallon! */}
+                <div>
+                    Gas costs about ${this.state.gasPrice} per gallon!
                     <h2>{this.props.reduxState.setLocation.setLocation}</h2>
                     <h2>{this.props.reduxState.setLocation.setLng}</h2>
-                    {/* <p>Where are you going Lizzy?</p>
+                    <p>Where are you going Lizzy?</p>
                     <button onClick={this.job1}>Job 1</button>
                     <button onClick={this.job2}>Job 2</button>
                     <button onClick={this.valleyFair}>Valley Fair</button>
@@ -87,7 +88,7 @@ class GasPage extends Component {
                     <p>Or Somewhere else?</p>
                     <LocationSearchInput></LocationSearchInput>
                 </div>
-                <p>That trip will cost ${this.state.tripCost}.</p> */}
+                <button>Next</button>
             </div>
         );
     }
